@@ -1,0 +1,258 @@
+:root {
+    --black-img: rgb(22, 24, 27);
+    --gray-color: rgb(33, 40, 45);
+    --orange-color: rgb(255, 165, 0); 
+    --blue-color: rgb(173, 216, 230);
+    --teal-color: rgb(0, 128, 128);
+    --light-gray: rgb(200, 200, 200);
+}
+
+body {
+    background-color: rgb(21, 21, 21);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header {
+    background-color: var(--gray-color); 
+    position: fixed;
+    width: 99%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px ;
+    padding: 1vh 1%;
+    border-radius: 10px;
+}
+
+.logo img { 
+    max-height: 9vh;
+    max-width: 50px;
+}
+
+
+header nav { 
+    display: flex; 
+    gap: 50%;
+}
+
+.second-nav {
+    display: flex;
+    width: 75%;
+    justify-content: end;
+    gap: 10%;
+}
+
+.topic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 40%;
+    color: white;
+}
+.topic li a {
+    color: white; 
+    text-decoration: none;
+
+}
+.topic li:hover, .active ,.topic li a:hover { 
+    color: var(--orange-color);
+    border-radius: 20px;  
+    
+}
+.topic li:hover,.logo img:hover {
+    cursor: pointer;
+}
+.topic li { 
+    font-size: 30px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-right: 1%;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    user-select: none;
+    margin-top: 10px;
+}
+
+.custom-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.custom-select-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--black-img);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--light-gray); 
+}
+
+.custom-select-trigger:hover {
+    background-color: var(--black-img); 
+    color: white;
+}
+
+.custom-options {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--black-img);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.custom-options.open {
+    display: flex;
+}
+
+.custom-option {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.custom-option:hover,
+.custom-option.selected {
+    background-color: var(--gray-color);
+    color: var(--orange-color);
+}
+
+.option-img {
+    width: 20px;
+    height: 20px;
+}
+
+.sheild{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 0.5px solid rgb(200, 200, 200) ;
+}
+.sheild:first-child{
+    margin-top: 11vh;
+}
+.sheild h1 , .sheild h4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.league{
+    background-color: var(--gray-color);
+    padding: 10px;
+    margin: 10px 10%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+}
+.league-logo{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: nowrap;
+    gap: 10px;
+    font-size: 30px;
+}
+/*  rgb(22, 24, 27) */
+.match{
+    border-bottom: 0.5px solid   rgb(200, 200, 200) ;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    font-size: 50px;
+    padding: 10px 0px;
+    
+}
+.match:last-child{
+    border-bottom: none;
+}
+.match:hover { 
+    background-color: var(--black-img);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+@media (max-width:500px) {
+    .custom-select-wrapper {
+        max-width: 150px;
+    }
+    .second-nav{
+        gap: 3%;
+    }
+    .topic {
+        gap: 10%;
+        margin-top: 1vh;
+        
+    } 
+    .topic li { 
+        font-size: 15px;
+    }
+    header {
+        margin: 10px 2px ;
+    }
+    .match{
+        border-bottom: 0.5px solid rgb(200, 200, 200) ;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        font-size: 30px;
+    }
+    .score { 
+        margin-top: 10px;
+    }
+    .league-logo{
+        font-size: 20px;
+
+    }
+    .league-logo img { 
+        width: 40px;
+        height: 40px;
+    }
+    .league-name{
+        margin-top: 8px;
+    }
+    .sheild:first-child{
+        margin-top: 15vh;
+    }
+}
